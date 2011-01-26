@@ -14,7 +14,7 @@ import tornado.web
 
 db = tornado.database.Connection(
          host="127.0.0.1:3306", database="eightlegs",
-         user="root", password=file('/var/eightlegs.tv/secret/database_key').read().strip(),
+         user="root", password=file('/var/eightlegs.tv/app/secret/database_key').read().strip(),
          max_idle_time=7*3600
 )
 
