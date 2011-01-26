@@ -18,6 +18,17 @@ db = tornado.database.Connection(
          max_idle_time=7*3600
 )
 
+def u2id( u ): 
+    db.execute("INSERT IGNORE users(u) values(%s)",u)
+    return db.query("SELECT id FROM users WHERE u=%s",u).id
+def q2id( q ): 
+    q = tornado.escape.squeeze(q).lower()
+    db.execute("INSERT IGNORE queries(q) values(%s)",q)
+    return db.query("SELECT id FROM queries WHERE q=%s",q).id
+def v2id( u ): 
+    db.execute("INSERT IGNORE videos(v) values(%s)",v)
+    return db.query("SELECT id FROM videos WHERE v=%s",v).id
+
 ###########################################
 #     YOUTUBE API CALLS
 ###########################################
