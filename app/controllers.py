@@ -81,7 +81,7 @@ def recommend( uid, qid, q ):
 
 class AuthHandler( tornado.web.RequestHandler ):
     def uid( self ):
-        pass #beware of cookies failing at two levels
+        return u2id( str(self.request.remote_ip) )
 
 class index( AuthHandler ):
     def get( self ):
