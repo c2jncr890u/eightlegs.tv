@@ -65,7 +65,7 @@ def youtube_related( v ):
 #   RECOMMENDATION ENGINE
 ############################################
 
-def calc_recommendation( uid, qid, q ):
+def recommend( uid, qid, q ):
     count = db.get("SELECT count(*) FROM opinions WHERE uid=%s AND qid=%s",uid,qid)["count(*)"]
     if count < random.randint(0,3):
         seedv = youtube_search(q)
@@ -79,14 +79,24 @@ def calc_recommendation( uid, qid, q ):
 #   CONTROLLERS
 ############################################
 
-class index( tornado.web.RequestHandler ):
-    def get( self ):
-        self.redirect( "/player?v=%s&q=%s" )
+class AuthHandler( tornado.web.RequestHandler ):
+    def uid( self ):
+        pass #beware of cookies failing at two levels
 
-class player( tornado.web.RequestHandler ):
+class index( AuthHandler ):
     def get( self ):
-        v = self.get_argument("v")
+        q = random.choice(kickstarter_queries)
+        v = recommend( self.uid(), q2id(q), q )
+        self.redirect( "/player?v=%s&q=%s" % (v,q) )
+
+class player( AuthHandler ):
+    def get( self ):
+        v = self.get_argument("v",None)
         q = self.get_argument("q","")
+        if v==None:
+            if q=="":
+                q = random.choice(kickstarter_queries)
+            v = recommend( self.uid(), q2id(q), q )
         self.render( "player.html", v=v, q=q )
 
 
