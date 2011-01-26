@@ -1,11 +1,7 @@
 function skip()
 {
-   $.get("/recommend",
-      { q: document.getElementById("q").value },
-      function ( data ) {
-         window.location="/?v="+data+"&q="+encodeURIComponent(document.getElementById("q").value);
-      }, "json"
-   );   
+    var v = new RegExp("[\\?&]v=([^&#]*)").exec(player.getVideoUrl())[1];
+    window.location = "/?v="+v+"&q="+encodeURIComponent(document.getElementById("q").value);
 }
 function maybeskip()
 {
