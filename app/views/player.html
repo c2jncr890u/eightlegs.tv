@@ -14,12 +14,13 @@
             <span>Logout</span>
         </div>
         <div id="player">
-            <object width="640" height="415" id="player-object">
+            <!-- <object width="640" height="415" id="player-object">
                 <param name="movie" value="http://www.youtube.com/v/{{v}}&hl=en_US&feature=player_embedded&version=3?autoplay=1&enablejsapi=1&color1=0xb1b1b1&color2=0xcfcfcf&showsearch=0&showinfo=0&iv_load_policy=3&feature=player_embedded"></param>
                 <param name="allowFullScreen" value="true"></param>
                 <param name="allowScriptAccess" value="always"></param>
                 <embed src="http://www.youtube.com/v/{{v}}&hl=en_US&feature=player_embedded&version=3?autoplay=1&enablejsapi=1&color1=0xb1b1b1&color2=0xcfcfcf&showsearch=0&showinfo=0&iv_load_policy=3&feature=player_embedded" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="415"></embed>
-            </object>
+            </object> -->
+            <embed id="ytplayer" src="http://www.youtube.com/v/{{v}}?enablejsapi=1&version=3"></embed>
             <a>+</a>
             <a>-</a>
         </div>
