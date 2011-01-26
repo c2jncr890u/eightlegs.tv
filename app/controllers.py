@@ -64,7 +64,8 @@ def youtube_related( v ):
 
 def recommend( uid, qid, q ):
     count = db.get("SELECT count(*) FROM playlists WHERE uid=%s AND qid=%s",uid,qid)["count(*)"]
-    if random.randint(0,3) < count:
+    i = random.randint(0,3)
+    if count <= i:
         seedv = youtube_search(q)
     else:
         print count
