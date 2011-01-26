@@ -1,7 +1,6 @@
 function skip()
 {   
-    var v = new RegExp("[\\?&]v=([^&#]*)").exec(ytplayer.getVideoUrl())[1];
-    window.location = "/player?v="+v+"&q="+encodeURIComponent(document.getElementById("q").value);
+    window.location = "/player?q="+encodeURIComponent(document.getElementById("q").value);
 }
 function maybeskip()
 {
