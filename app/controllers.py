@@ -94,6 +94,7 @@ class player( AuthHandler ):
             if q=="":
                 q = random.choice(kickstarter_queries)
             v = recommend( self.uid(), q2id(q), q )
+            self.redirect( "/player?v=%s&q=%s" % (v,q) )
         self.render( "player.html", v=v, q=q )
 
 
