@@ -35,7 +35,7 @@ def v2id( u ):
 
 def youtube_service():
    yt_service = gdata.youtube.service.YouTubeService()
-   yt_service.developer_key = file('/var/eightlegs.tv/secrets/developer_key').read().strip()
+   yt_service.developer_key = file('/var/eightlegs.tv/app/secrets/developer_key').read().strip()
    yt_service.client_id = 'eightlegs.tv'
    return yt_service
 
