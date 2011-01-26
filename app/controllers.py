@@ -12,9 +12,9 @@ class index( tornado.web.RequestHandler ):
     def get( self ):
         self.redirect( "/player?v=%s&q=%s" )
 
-class about( tornado.web.RequestHandler ):
+class player( tornado.web.RequestHandler ):
     def get( self ):
-        self.render( "about.html" )
+        self.render( "player.html" )
 
 class contact( tornado.web.RequestHandler ):
     def get( self ):
