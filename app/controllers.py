@@ -1,10 +1,10 @@
+# -*- coding: utf-8 -*-
 
-from email.MIMEText import MIMEText
-import os.path
+import gdata.youtube
+import gdata.youtube.service
 import random
-import smtplib
-import string
-import subprocess
+import tornado.database
+import tornado.escape
 import tornado.web
 
 
@@ -32,9 +32,6 @@ def v2id( u ):
 ###########################################
 #     YOUTUBE API CALLS
 ###########################################
-
-import gdata.youtube
-import gdata.youtube.service
 
 def youtube_service():
    yt_service = gdata.youtube.service.YouTubeService()
