@@ -1,0 +1,30 @@
+/* Styles Reset */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td { padding: 0; border: 0; outline: 0; margin: 0; font-size: 1.0em; font-weight: inherit; font-family: inherit; font-style: inherit; vertical-align: baseline; }
+ol, ul { list-style: none; }
+
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+
+a { text-decoration: none; }
+a:link { color: #444444; text-decoration: none; }
+a:visited { color:#444444; }
+a:hover { text-decoration: underline; }
+
+/* Font Reset */
+body{font:13px/1.231 helvetica, arial, freesans, clean, sans-serif;*font-size:small;*font:x-small;}
+select,input,button,textarea,button{font:99% helvetica, arial, freesans, clean, sans-serif;}
+table{font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+/* Base Styles */
+
+html { background: #555; }
+#header { position: fixed: top: 0; height: 30px; width: 100%; line-height: 30px; 
+          background: #000; color: #F00; border-bottom: 1px solid #222; text-align: right; }
+#header span { margin-right: 30px; }
+#header span[onclick] { font-weight: bold; }
+#player { position: absolute; top: 50%; left: 50%; height: 440px; margin-top: -220px; width: 640px; margin-left: -320px; } 
+#player a { line-height: 50px; }
+#footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
+          background: #000; color: #F00; border-top: 1px solid #222; text-align: center; }
+
