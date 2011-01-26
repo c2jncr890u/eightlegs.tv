@@ -9,7 +9,7 @@ function maybeskip()
 }
 function onYouTubePlayerReady(playerid)
 {
-   player = document.getElementById("player");
+   player = document.getElementById("player-object");
    player.addEventListener("onError", "skip" );
    player.addEventListener("onStateChange", "maybeskip" );
 }
