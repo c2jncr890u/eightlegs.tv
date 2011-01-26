@@ -67,6 +67,7 @@ def recommend( uid, qid, q ):
     if random.randint(0,3) < count:
         seedv = youtube_search(q)
     else:
+        print count
         seedid = db.get("SELECT vid FROM playlists WHERE uid=%s AND qid=%s LIMIT %s,1",uid,qid,random.randint(0,count-1)).vid
         seedv  = db.get("SELECT v FROM videos WHERE id=%s",seedid).v
     return youtube_related(seedv) 
