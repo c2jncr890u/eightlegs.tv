@@ -84,7 +84,7 @@ class index( AuthHandler ):
     def get( self ):
         q = random.choice(kickstarter_queries)
         v = recommend( self.uid(), q2id(q), q )
-        self.redirect( "/player?v=%s&q=%s" % (v,q) )
+        self.redirect( "/player?v=%s&q=%s" % (tornado.escape.url_escape(v),tornado.escape.url_escape(q)) )
 
 class player( AuthHandler ):
     def get( self ):
@@ -94,7 +94,7 @@ class player( AuthHandler ):
             if q=="":
                 q = random.choice(kickstarter_queries)
             v = recommend( self.uid(), q2id(q), q )
-            self.redirect( "/player?v=%s&q=%s" % (v,q) )
+            self.redirect( "/player?v=%s&q=%s" % (tornado.escape.url_escape(v),tornado.escape.url_escape(q)) )
         else:
             self.render( "player.html", v=v, q=q )
 
