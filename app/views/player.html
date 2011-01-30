@@ -4,26 +4,35 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Be a spider, not a spud — eightlegs.tv</title>
         <meta name="title" content="Be a spider, not a spud — eightlegs.tv" />
-        <meta name="description" content="The internet video site for lazy people." />
+        <meta name="description" content="Create and share youtube playlists." />
         <link rel="stylesheet" type="text/css" href="/style.css"/>
         <script type="text/javascript" src="/script.js"></script>
     </head>
     <body>
         <div id="header">
-            <form action="/player">
+            <form id="s" action="/player">
+                <label onclick="document.getElementById('s').submit()">Search</label>
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
-            <span onclick>Andrew</span>
+            <span>Andrew
+                <div id="user-dd"></div>
+            </span>
             <span>Logout</span>
         </div>
         <div id="player">
-            <object type="application/x-shockwave-flash" id="ytplayer" width="640" height="415" style="visibility: visible;"
+            <div id="pre-player"></div>
+            <div id="left-player"></div>
+            <object type="application/x-shockwave-flash" id="ytplayer" width="640" height="420" style="visibility: visible;"
                 data="http://www.youtube.com/v/{{v}}&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;autoplay=1&amp;rel=0" >
                 <param name="allowScriptAccess" value="always">
                 <param name="allowFullScreen" value="true">
             </object>
-            <a>+</a>
-            <a>-</a>
+            <div id="right-player"></div>
+            <div id="post-player"></div>
+            <div id="rate">
+                <span title="Add to playlist"><img src="/thumb_up.png"></img></span>
+                <span title="Skip to next video"><img src="/thumb_down.png"></img></span>
+            </div>
         </div>
         <div id="footer">© 2011 eightlegs.tv</div>
     </body>

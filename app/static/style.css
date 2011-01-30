@@ -19,13 +19,38 @@ pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 /* Base Styles */
 
 html { background: #555; }
-#header { position: fixed: top: 0; height: 30px; width: 100%; line-height: 30px; 
+
+#header { position: fixed; top: 0; height: 30px; width: 100%; line-height: 30px; 
           background: #000; color: #F00; border-bottom: 1px solid #222; text-align: right; }
-#header * { margin-right: 30px; cursor: pointer; }
+#header > form { float: left; }
+#header > form > label { margin-left: 25px; margin-right: 30px; }
 #header :nth-last-child(2) { font-weight: bold; }
-#header :hover { text-shadow: #F44 0px 0px 5px; } 
-#player { position: absolute; top: 50%; left: 50%; height: 440px; margin-top: -220px; width: 640px; margin-left: -320px; } 
-#player a { line-height: 50px; }
+#header > span, #header label { display: inline-block; margin-right: 30px; cursor: pointer; }
+#header > span:hover, #header label:hover { text-shadow: #F44 0px 0px 5px; }
+#header #user-dd { display: none; } 
+#header #user-dd, #header #user-dd { display: block; height: 100px; width: 100px; background: #444; }
+
 #footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
           background: #000; color: #F00; border-top: 1px solid #222; text-align: center; }
+
+#player { position: absolute; top: 50%; left: 50%; height: 440px; margin-top: -250px; width: 660px; margin-left: -330px; } 
+#player #pre-player { float: left; width: 660px; height: 10px; background: #444; 
+                      border-top-left-radius: 10px 10px; border-top-right-radius: 10px 10px;  }
+#player #left-player { float: left; width: 10px; height: 420px; background: #444; }
+#player object { float: left; padding: 0; margin: 0; height: 420px; width: 640px; }
+#player #right-player { float: left; width: 10px; height: 420px; background: #444; }
+#player #post-player { float: left; width: 660px; height: 10px; background: #444; margin-bottom: 20px; 
+                    border-bottom-left-radius: 10px 10px; border-bottom-right-radius: 10px 10px; }
+#player #rate > span { margin-right: 70px; line-height: 50px; cursor: pointer; }
+#player #rate > :nth-child(1) { margin-left: 245px; }
+
+#content { margin: 60px auto 60px; padding: 20px; width: 700px; border-top: 1px solid #844; border-left: 1px solid #644; border-top-left-radius: 10px 10px; min-height: 400px; }
+#content h1 { font-size: 181%; padding: 0 0 20px 5px; font-weight: bold; font-family: monospace; }
+#content ul { padding: 3px 5px; background: #444; border-radius: 10px; }
+#content li { margin: 3px 0; height: 50px; width: 100%; background: #000; border: 1px solid #222; border-radius: 10px; }
+#content li span { float: left; margin: 0 15px; line-height: 50px; font-size: 131%; color: #bbb; }
+#content li a { float: right; padding: 7px; color: #bbb; }
+#content li :nth-child(2) { margin-right: 12px; }
+
+
 
