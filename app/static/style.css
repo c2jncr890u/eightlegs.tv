@@ -28,7 +28,6 @@ html { background: #555; }
 #header > span, #header label { display: inline-block; margin-right: 30px; cursor: pointer; }
 #header > span:hover, #header label:hover { text-shadow: #F44 0px 0px 5px; }
 #header #user-dd { display: none; } 
-#header #user-dd, #header #user-dd { display: block; height: 100px; width: 100px; background: #444; }
 
 #footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
           background: #000; color: #F00; border-top: 1px solid #222; text-align: center; }
