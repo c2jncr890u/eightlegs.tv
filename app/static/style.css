@@ -40,7 +40,7 @@ html { background: #555; }
 #player #right-player { float: left; width: 10px; height: 420px; background: #444; }
 #player #post-player { float: left; width: 660px; height: 10px; background: #444; margin-bottom: 20px; 
                     border-bottom-left-radius: 10px 10px; border-bottom-right-radius: 10px 10px; }
-#player #rate > span { margin-right: 70px; line-height: 50px; cursor: pointer; }
+#player #rate > a { margin-right: 70px; line-height: 50px; cursor: pointer; }
 #player #rate > :nth-child(1) { margin-left: 245px; }
 
 #content { margin: 60px auto 60px; padding: 20px; width: 700px; border-top: 1px solid #844; border-left: 1px solid #644; border-top-left-radius: 10px 10px; min-height: 400px; }
