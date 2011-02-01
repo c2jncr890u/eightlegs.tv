@@ -102,7 +102,7 @@ class signout( AuthHandler ):
 
 class signup( AuthHandler ):
     def get( self ):
-        self.render("signup.html")
+        self.render("signup.html", q="")
 
 class index( AuthHandler ):
     def get( self ):
