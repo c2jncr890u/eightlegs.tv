@@ -15,16 +15,16 @@
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
             {%if current_user()%}
+                <a href="/signout">Sign Out</a>
                 <span class="username"><a>{{current_user()[:current_user().find('@')]}}</a>
                     <div id="user-dd">
                         <a href="/recent">Recent Playlists</a>
                         <a href="/shared">Shared Playlists</a>
                     </div>
                 </span>
-                <a href="/signout">Sign Out</a>
             {%else%}
-                <a href="/signup">Create Account</a>
                 <a href="/signin">Sign In</a>
+                <a href="/signup">Create Account</a>
             {%end%}
         </div>
         {%block content%}{%end%}
