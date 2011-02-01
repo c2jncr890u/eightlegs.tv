@@ -30,8 +30,7 @@ html { background: #555; }
 #header .username { position: relative; }
 #header .username > a { font-weight: bold; margin-right: 30px; text-decoration: none; text-shadow: none; }
 #header .username:hover > a:before { content: "▼ "; }
-#header .username #user-dd { display: none; } 
-#header .username #user-dd * { padding: 0 5px; } 
+#header .username #user-dd { display: none; padding: 0 15px; } 
 #header .username:hover #user-dd, #user-dd:hover { display: block; position: absolute; top: 23px; left: -30px; background: #000; border: 1px solid #222; border-radius: 5px; }
 
 
