@@ -16,7 +16,10 @@
             </form>
             {%if current_user()%}
                 <span class="username"><a>{{current_user()[:current_user().find('@')]}}</a>
-                    <div id="user-dd"></div>
+                    <div id="user-dd">
+                        <a href="/recent">Recent Playlists</a>
+                        <a href="/shared">Shared Playlists</a>
+                    </div>
                 </span>
                 <a href="/signout">Sign Out</a>
             {%else%}
