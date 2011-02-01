@@ -28,7 +28,7 @@ html { background: #555; }
 #header a:hover { text-shadow: #F44 0px 0px 5px; }
 #header .username { font-weight: bold; }
 #header .username { text-decoration: none; }
-#header .username:hover:before { content: "▼ "; }
+#header .username:hover a:before { content: "▼ "; }
 #header .username:hover #user-dd { display: block; height: 200px; width: 200px; background: #444; }
 #header #user-dd { display: none; } 
 
