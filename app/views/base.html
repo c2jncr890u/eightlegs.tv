@@ -14,10 +14,15 @@
                 <label onclick="document.getElementById('s').submit()">Search</label>
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
+            {%if current_user%}
             <span>Andrew
                 <div id="user-dd"></div>
             </span>
-            <span>Logout</span>
+            <span>Sign Out</span>
+            {%else%}
+            <span>Create Account</span>
+            <span>Sign In</span>
+            {%end%}
         </div>
         {%block content%}{%end%}
         <div id="footer">© 2011 eightlegs.tv</div>
