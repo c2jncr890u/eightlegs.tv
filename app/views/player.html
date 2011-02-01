@@ -14,7 +14,7 @@
         <div id="post-player"></div>
         <div id="rate">
             <a href><img title="Add to playlist" src="/thumb_up.png"></img></a>
-            <a href="/player?q={{escape.url_encode(q)}}"><img title="Skip to next video" src="/thumb_down.png"></img></a>
+            <a href="/player?q={{escape.url_escape(q)}}"><img title="Skip to next video" src="/thumb_down.png"></img></a>
         </div>
     </div>
 {%end%}
