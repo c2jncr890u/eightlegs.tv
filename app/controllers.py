@@ -88,7 +88,7 @@ class signin( AuthHandler ):
     def post( self ):
         log = self.get_argument("log")
         pwd = self.get_argument("pwd")
-        user = db.get("SELECT from users where u=%s and pwdhash=SHA1(CONCAT(%s,%s))",log,log,pwd)
+        user = db.get("SELECT * from users where u=%s and pwdhash=SHA1(CONCAT(%s,%s))",log,log,pwd)
         if user:
             self.set_secure_cookie("user",user.u)
         else:
