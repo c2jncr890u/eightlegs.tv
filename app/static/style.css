@@ -23,12 +23,12 @@ html { background: #555; }
 #header { position: fixed; top: 0; height: 30px; width: 100%; line-height: 30px; 
           background: #000; color: #F00; border-bottom: 1px solid #222; text-align: right; }
 #header > form { float: left; }
-#header > form > label { margin-left: 25px; }
+#header > form > label { margin-left: 25px; margin-right: 25px; }
 #header a { display: inline-block; color: #F00; cursor: pointer; }
 #header a:hover { text-shadow: #F44 0px 0px 5px; }
 #header > a { margin-right: 30px;  }
 #header .username { font-weight: bold; position: relative; }
-#header .username > a { text-decoration: none; text-shadow: none; }
+#header .username > a { margin-right: 30px; text-decoration: none; text-shadow: none; }
 #header .username:hover > a:before { content: "▼ "; }
 #header .username #user-dd { display: none; } 
 #header .username:hover #user-dd, #user-dd:hover { display: block; position: absolute; padding: 5px; top: 23px; left: -30px; background: #000; border: 1px solid #222; border-radius: 5px; }
