@@ -91,8 +91,14 @@ class signin( AuthHandler ):
         user = db.get("SELECT * from users where u=%s and pwdhash=SHA1(CONCAT(%s,%s))",log,log,pwd)
         if user:
             self.set_secure_cookie("user",user.u)
+            self.redirect("/recent")
         else:
             self.redirect("/signin?error=signin")
+
+class signout( AuthHandler ):
+    def get( self ):
+        self.clear_cookie("user")
+        self.redirect("/signin")
 
 class signup( AuthHandler ):
     def get( self ):

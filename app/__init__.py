@@ -18,6 +18,7 @@ application = tornado.web.Application( [
     ( "/",                          controllers.index       ),
     ( "/player",                    controllers.player      ),
     ( "/signin",                    controllers.signin      ),
+    ( "/signout",                   controllers.signout     ),
     ( "/signup",                    controllers.signup      ),
           
 ], **settings )
