@@ -26,8 +26,8 @@ html { background: #555; }
 #header > form > label { margin-left: 25px; }
 #header a { display: inline-block; margin-right: 30px; color: #F00; cursor: pointer; }
 #header a:hover { text-shadow: #F44 0px 0px 5px; }
-#header .username { font-weight: bold; }
-#header .username { text-decoration: none; }
+#header .username { font-weight: bold; position: relative; }
+#header .username a { text-decoration: none; }
 #header .username:hover a:before { content: "▼ "; }
 #header .username:hover #user-dd, #user-dd:hover { display: block; position: absolute; top: 0px; left: 0px; height: 200px; width: 200px; background: #444; }
 #header #user-dd { display: none; } 
