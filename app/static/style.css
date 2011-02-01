@@ -24,8 +24,8 @@ html { background: #555; }
           background: #000; color: #F00; border-bottom: 1px solid #222; text-align: right; }
 #header > form { float: left; }
 #header > form > label { margin-left: 25px; margin-right: 30px; }
-#header a, #header label { display: inline-block; margin-right: 30px; color: #F00; cursor: pointer; }
-#header a:hover, #header label:hover { text-shadow: #F44 0px 0px 5px; }
+#header a { display: inline-block; margin-right: 30px; color: #F00; cursor: pointer; }
+#header a:hover { text-shadow: #F44 0px 0px 5px; }
 #header #user-dd { display: none; } 
 
 #footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
