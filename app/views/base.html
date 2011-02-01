@@ -11,7 +11,7 @@
     <body>
         <div id="header">
             <form id="s" action="/player">
-                <label onclick="document.getElementById('s').submit()">Search</label>
+                <label onclick="document.getElementById('s').submit()"><a>Search<a></label>
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
             {%if current_user()%}
