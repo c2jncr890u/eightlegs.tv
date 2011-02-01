@@ -29,6 +29,7 @@ html { background: #555; }
 #header .username { font-weight: bold; }
 #header .username { text-decoration: none; }
 #header .username:hover:before { content: "▼ "; }
+#header .username:active #user-dd { display: block; height: 200px; width: 200px; background: #444; }
 #header #user-dd { display: none; } 
 
 #footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
