@@ -26,6 +26,8 @@ html { background: #555; }
 #header > form > label { margin-left: 25px; }
 #header a { display: inline-block; margin-right: 30px; color: #F00; cursor: pointer; }
 #header a:hover { text-shadow: #F44 0px 0px 5px; }
+#header .username { font-weight: bold; }
+#header .username:hover:before { content: "() "; }
 #header #user-dd { display: none; } 
 
 #footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
