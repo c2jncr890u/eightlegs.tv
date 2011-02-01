@@ -15,13 +15,13 @@
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
             {%if current_user()%}
-            <span>{{current_user()}}
-                <div id="user-dd"></div>
-            </span>
-            <span>Sign Out</span>
+                <span><strong><a>{{current_user()}}</a></strong>
+                    <div id="user-dd"></div>
+                </span>
+                <a>Sign Out</a>
             {%else%}
-            <span>Create Account</span>
-            <span>Sign In</span>
+                <a href="/signup">Create Account</a>
+                <a href="/signin">Sign In</a>
             {%end%}
         </div>
         {%block content%}{%end%}
