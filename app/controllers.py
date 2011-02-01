@@ -82,6 +82,21 @@ class AuthHandler( tornado.web.RequestHandler ):
     def current_user( self ):
         return self.get_secure_cookie("user")
             
+class signin( AuthHandler ):
+    def get( self ):
+        self.render("signin.html")
+    def post( self ):
+        log = self.get_argument("log")
+        pwd = self.get_argument("pwd")
+        user = db.get("SELECT from users where u=%s and pwdhash=SHA1(CONCAT(%s,%s))",log,log,pwd)
+        if user:
+            self.set_secure_cookie("user",user.u)
+        else:
+            self.redirect("/signin?error=signin")
+
+class signup( AuthHandler ):
+    def get( self ):
+        self.render("signup.html")
 
 class index( AuthHandler ):
     def get( self ):
