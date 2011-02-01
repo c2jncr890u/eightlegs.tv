@@ -96,7 +96,7 @@ class player( AuthHandler ):
             v = recommend( self.uid(), q2id(q), q )
             self.redirect( "/player?v=%s&q=%s" % (v,tornado.escape.url_escape(q)) )
         else:
-            self.render( "player.html", v=v, q=q )
+            self.render( "player.html", v=v, q=q, escape=tornado.escape )
 
 
 #http://en.wikipedia.org/wiki/List_of_best-selling_music_artists
