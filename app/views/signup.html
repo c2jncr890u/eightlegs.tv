@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+{%block title%}Sign Up — eightlegs.tv{%end%}
+{%block content%}
+    <div id="content">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post">
+            <ul>
+                <li><span><label for="log">Email</label><input id="log" name="log" type="text"/></span></li>
+                <li><span><label for="pwd">Password</label><input id="pwd" name="pwd" type="password"/></span></li>
+                <li><span><input type="submit" value="Submit"/></span></li>
+            </ul>
+        </form>
+    </div>
+{%end%}
