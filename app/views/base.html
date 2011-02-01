@@ -15,7 +15,7 @@
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
             {%if current_user()%}
-                <span><strong><a>{{current_user()[:current_user().find('@')}}</a></strong>
+                <span><strong><a>{{current_user()[:current_user().find('@')]}}</a></strong>
                     <div id="user-dd"></div>
                 </span>
                 <a>Sign Out</a>
