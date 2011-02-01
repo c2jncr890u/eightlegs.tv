@@ -27,7 +27,7 @@ html { background: #555; }
 #header a { display: inline-block; margin-right: 30px; color: #F00; cursor: pointer; }
 #header a:hover { text-shadow: #F44 0px 0px 5px; }
 #header .username { font-weight: bold; position: relative; }
-#header .username a { text-decoration: none; }
+#header .username a { text-decoration: none; text-shadow: none; }
 #header .username:hover a:before { content: "▼ "; }
 #header .username:hover #user-dd, #user-dd:hover { display: block; position: absolute; top: 23px; left: -30px; height: 200px; width: 200px; background: #000; border: 1px solid #222; border-radius: 5px; }
 #header #user-dd { display: none; } 
