@@ -4,10 +4,13 @@
 {%block content%}
     <div id="content">
         <h1>Sign In</h1>
-        <ul>
-            <li><span><label for="log">Email</label><input type="text"/></span></li>
-            <li><span><label for="pwd">Password</label><input type="text"/></span></li>
-            <li><span><input type="submit" value="Submit"/></span></li>
-        </ul>
+        <form action="/signin">
+            <ul>
+            
+                <li><span><label for="log">Email</label><input type="text"/></span></li>
+                <li><span><label for="pwd">Password</label><input type="text"/></span></li>
+                <li><span><input type="submit" value="Submit"/></span></li>
+            </ul>
+        </form>
     </div>
 {%end%}
