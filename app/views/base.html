@@ -14,8 +14,8 @@
                 <label onclick="document.getElementById('s').submit()">Search</label>
                 <input type="text" id="q" name="q" value="{{q}}"/>
             </form>
-            {%if current_user%}
-            <span>{{current_user}}
+            {%if current_user()%}
+            <span>{{current_user()}}
                 <div id="user-dd"></div>
             </span>
             <span>Sign Out</span>
