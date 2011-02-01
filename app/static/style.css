@@ -29,7 +29,7 @@ html { background: #555; }
 #header .username { font-weight: bold; position: relative; }
 #header .username a { text-decoration: none; }
 #header .username:hover a:before { content: "▼ "; }
-#header .username:hover #user-dd, #user-dd:hover { display: block; position: absolute; top: 24px; left: -30px; height: 200px; width: 200px; background: #000; }
+#header .username:hover #user-dd, #user-dd:hover { display: block; position: absolute; top: 24px; left: -30px; height: 200px; width: 200px; background: #000; border: 1px solid #222; border-radius: 5px; }
 #header #user-dd { display: none; } 
 
 #footer { position: fixed; bottom: 0; height: 30px; width: 100%; line-height: 30px; 
