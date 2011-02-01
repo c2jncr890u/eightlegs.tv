@@ -26,7 +26,7 @@ html { background: #555; }
 #header > form > label { margin-left: 25px; margin-right: 25px; }
 #header a { display: inline-block; color: #F00; cursor: pointer; }
 #header a:hover { text-shadow: #F44 0px 0px 5px; }
-#header > a { margin-right: 30px;  }
+#header > span, #header > a { float: right; margin-right: 30px;  }
 #header .username { font-weight: bold; position: relative; }
 #header .username > a { margin-right: 30px; text-decoration: none; text-shadow: none; }
 #header .username:hover > a:before { content: "▼ "; }
