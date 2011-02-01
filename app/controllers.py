@@ -84,7 +84,7 @@ class AuthHandler( tornado.web.RequestHandler ):
             
 class signin( AuthHandler ):
     def get( self ):
-        self.render("signin.html")
+        self.render("signin.html", q="")
     def post( self ):
         log = self.get_argument("log")
         pwd = self.get_argument("pwd")
