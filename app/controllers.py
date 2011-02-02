@@ -12,6 +12,8 @@ import tornado.web
 #     MODELS
 ###########################################
 
+RE_EMAIL    = re.compile(r"^[-a-z0-9_]+@([-a-z0-9]+\.)+[a-z]{2,6}$",re.IGNORECASE)
+
 db = tornado.database.Connection(
          host="127.0.0.1:3306", database="eightlegs",
          user="root", password=file('/var/eightlegs.tv/app/secrets/database_key').read().strip(),
@@ -100,9 +102,41 @@ class signout( AuthHandler ):
         self.clear_cookie("user")
         self.redirect("/signin")
 
+message_template = '''
+<div lang="en" style="background-color:#fff;color:#222">
+    <div style="padding:14px;margin-bottom:4px;background-color:#008eb9">
+        <a href="email_header" target="_blank"><img alt="Eightlegs.tv" height="24" src="logo_overlay" style="display:block;border:0" width="130"></a>
+    </div>
+    <div style="font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;font-size:13px;margin:14px">
+        <p>
+            Please confirm your Eightlegs.tv account by clicking this link:<br>
+            <a href="http://eightlegs.tv/confirm?id={pk}" target="_blank">http://eightlegs.tv/confirm?id={pk}</a>
+        </p>
+    </div>
+</div>'''
 class signup( AuthHandler ):
     def get( self ):
         self.render("signup.html", q="")
+    def post( self ):
+        log = self.get_argument('log')
+        pwd = self.get_argument('pwd')
+        if not RE_EMAIL.match(log): return self.redirect("/signup?error=email")
+        pk = ''.join(random.choice(string.letters) for _ in range(20))
+        expires = datetime.datetime.now() + datetime.timedelta(minutes=30)
+        js = json.dumps({ 'action':'confirm_signup', 'log': log, 'pwd': pwd })
+        db.execute("INSERT UPDATE tmp (pk,expires,json) values (%s,%s,%s)",pk,expires,js)
+        
+        content = message_template.format( pk=pk )
+
+        msg = MIMEText(content)
+        msg["Subject"] = "Confirm your account at eightlegs.tv"
+        msg["From"] = "noreply@eightlegs.tv"
+        msg["To"] = log
+
+        s = smtplib.SMTP()
+        s.connect("localhost")
+        s.sendmail("noreply@eightlegs.tv",log, msg.as_string())
+        s.close()
 
 class index( AuthHandler ):
     def get( self ):

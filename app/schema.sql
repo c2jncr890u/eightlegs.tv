@@ -25,3 +25,9 @@ CREATE TABLE playlists (
     vid INT NOT NULL REFERENCES videos(id),
     PRIMARY KEY (uid,qid,vid) -- PK + find queries by (user) + find videos by (user,tag)
 );
+
+CREATE TABLE tmp (
+    pk VARCHAR(20) NOT NULL PRIMARY KEY,
+    expires DATETIME NOT NULL,
+    json VARCHAR(2048) NOT NULL
+);
