@@ -151,6 +151,7 @@ class signup( AuthHandler ):
         s.connect("localhost")
         s.sendmail("noreply@eightlegs.tv",log, msg.as_string())
         s.close()
+        self.redirect("/signin")
 
 class index( AuthHandler ):
     def get( self ):
