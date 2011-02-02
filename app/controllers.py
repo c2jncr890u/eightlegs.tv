@@ -108,18 +108,25 @@ class signout( AuthHandler ):
         self.clear_cookie("user")
         self.redirect("/signin")
 
-message_template = '''
-<div lang="en" style="background-color:#fff;color:#222">
-    <div style="padding:14px;margin-bottom:4px;background-color:#008eb9">
-        <a href="email_header" target="_blank"><img alt="Eightlegs.tv" height="24" src="logo_overlay" style="display:block;border:0" width="130"></a>
-    </div>
-    <div style="font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;font-size:13px;margin:14px">
-        <p>
-            Please confirm your Eightlegs.tv account by clicking this link:<br>
-            <a href="http://eightlegs.tv/confirm?id={pk}" target="_blank">http://eightlegs.tv/confirm?id={pk}</a>
-        </p>
-    </div>
-</div>'''
+text_template = "Please confirm your Eightlegs.tv account by clicking this link: http://eightlegs.tv/confirm?id={pk}"
+html_template = """\
+<html>
+  <head></head>
+  <body>
+    <div lang="en" style="background-color:#fff;color:#222">
+        <div style="padding:14px;margin-bottom:4px;background-color:#008eb9">
+            <a href="email_header" target="_blank"><img alt="Eightlegs.tv" height="24" src="logo_overlay" style="display:block;border:0" width="130"></a>
+        </div>
+        <div style="font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;font-size:13px;margin:14px">
+            <p>
+                Please confirm your Eightlegs.tv account by clicking this link:<br>
+                <a href="http://eightlegs.tv/confirm?id={pk}" target="_blank">http://eightlegs.tv/confirm?id={pk}</a>
+            </p>
+        </div>
+        </div>
+  </body>
+</html>
+"""
 class signup( AuthHandler ):
     def get( self ):
         self.render("signup.html", q="")
@@ -134,10 +141,12 @@ class signup( AuthHandler ):
         
         content = message_template.format( pk=pk )
 
-        msg = MIMEText(content)
-        msg["Subject"] = "Confirm your account at eightlegs.tv"
-        msg["From"] = "noreply@eightlegs.tv"
-        msg["To"] = log
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = "Confirm your account at eightlegs.tv"
+        msg['From'] = 'noreply@eightlegs.tv'
+        msg['To'] = log
+        msg.attach( MIMEText(text_template.format(pk=pk), 'plain') )
+        msg.attach( MIMEText(html_template.format(pk=pk), 'html') )
 
         s = smtplib.SMTP()
         s.connect("localhost")
