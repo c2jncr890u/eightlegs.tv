@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-from email.MIMEText import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 import gdata.youtube
 import gdata.youtube.service
 import json
