@@ -115,7 +115,7 @@ html_template = """\
   <head></head>
   <body>
     <div lang="en" style="background-color:#fff;color:#222">
-        <div style="padding:14px;margin-bottom:4px;background-color:#008eb9">
+        <div style="padding:14px;margin-bottom:4px;background-color:#000;color:#f00">
             <a href="email_header" target="_blank"><img alt="Eightlegs.tv" height="24" src="logo_overlay" style="display:block;border:0" width="130"></a>
         </div>
         <div style="font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;font-size:13px;margin:14px">
