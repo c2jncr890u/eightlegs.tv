@@ -4,7 +4,7 @@ import gdata.youtube
 import gdata.youtube.service
 import random
 import re
-import smptlib
+import smtplib
 import tornado.database
 import tornado.escape
 import tornado.web
