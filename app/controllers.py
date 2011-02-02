@@ -138,8 +138,6 @@ class signup( AuthHandler ):
         expires = datetime.datetime.now() + datetime.timedelta(minutes=30)
         js = json.dumps({ 'action':'confirm_signup', 'log': log, 'pwd': pwd })
         db.execute("INSERT IGNORE tmp (pk,expires,json) values (%s,%s,%s)",pk,expires,js)
-        
-        content = message_template.format( pk=pk )
 
         msg = MIMEMultipart('alternative')
         msg['Subject'] = "Confirm your account at eightlegs.tv"
