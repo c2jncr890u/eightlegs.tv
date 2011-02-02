@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import datetime
+import email
 import gdata.youtube
 import gdata.youtube.service
 import json
@@ -133,7 +134,7 @@ class signup( AuthHandler ):
         
         content = message_template.format( pk=pk )
 
-        msg = MIMEText(content)
+        msg = email.MIMEText(content)
         msg["Subject"] = "Confirm your account at eightlegs.tv"
         msg["From"] = "noreply@eightlegs.tv"
         msg["To"] = log
