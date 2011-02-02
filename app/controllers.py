@@ -129,7 +129,7 @@ class signup( AuthHandler ):
         pk = ''.join(random.choice(string.letters) for _ in range(20))
         expires = datetime.datetime.now() + datetime.timedelta(minutes=30)
         js = json.dumps({ 'action':'confirm_signup', 'log': log, 'pwd': pwd })
-        db.execute("INSERT UPDATE tmp (pk,expires,json) values (%s,%s,%s)",pk,expires,js)
+        db.execute("INSERT IGNORE tmp (pk,expires,json) values (%s,%s,%s)",pk,expires,js)
         
         content = message_template.format( pk=pk )
 
